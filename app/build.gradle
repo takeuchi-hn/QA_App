@@ -3,13 +3,17 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion "31.0.0"
-
+    compileSdkVersion 30
+    buildToolsVersion "30.0.0"
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     defaultConfig {
         applicationId "jp.techacademy.taichi.takeuchi.qa_app"
         minSdkVersion 23
-        targetSdkVersion 31
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -34,7 +38,7 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.5.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
@@ -44,4 +48,10 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
+    implementation 'androidx.preference:preference:1.1.1'  // この行を追加
+    implementation 'com.google.android.material:material:1.2.0'  // この行を追加
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0' // この行を追加
+    implementation 'androidx.media:media:1.0.0' // この行を追加
+    implementation 'com.google.firebase:firebase-auth:19.4.0' // この行を追加
+    implementation 'com.google.firebase:firebase-database:19.4.0' // この行を追加
 }

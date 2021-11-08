@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "443192312714",
+    "project_id": "qaapp-2788b",
+    "storage_bucket": "qaapp-2788b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443192312714:android:0af11eda2532c25f30be73",
+        "android_client_info": {
+          "package_name": "jp.techacademy.taichi.takeuchi.qa_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443192312714-pql2tuk5ul1nt919c0k1earl01lk7mr9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdvC8FNOZJxC4oOeumu8TixCDCwssbYEw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "443192312714-pql2tuk5ul1nt919c0k1earl01lk7mr9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
