@@ -1,4 +1,5 @@
 package jp.techacademy.taichi.takeuchi.qa_app
+//使ってない
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -3,6 +3,7 @@ package jp.techacademy.taichi.takeuchi.qa_app
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_question_detail.*
@@ -67,22 +68,30 @@ class QuestionDetailActivity : AppCompatActivity() {
         listView.adapter = mAdapter
         mAdapter.notifyDataSetChanged()
 
-        fab.setOnClickListener {
-            // ログイン済みのユーザーを取得する
-            val user = FirebaseAuth.getInstance().currentUser
+        // ログイン済みのユーザーを取得する
+        val user = FirebaseAuth.getInstance().currentUser
 
+        fab.setOnClickListener {
             if (user == null) {
                 // ログインしていなければログイン画面に遷移させる
                 val intent = Intent(applicationContext, LoginActivity::class.java)
                 startActivity(intent)
             } else {
                 // Questionを渡して回答作成画面を起動する
-                // --- ここから ---
                 val intent = Intent(applicationContext, AnswerSendActivity::class.java)
                 intent.putExtra("question", mQuestion)
                 startActivity(intent)
-                // --- ここまで ---
             }
+        }
+
+        // お気に入りボタンの表示非表示
+        if(user ==null){
+            // ログインしていない　ボタンを表示させない
+            button.visibility = View.GONE
+        } else {
+            // ログインしている　ボタンを表示させる
+            button.visibility = View.VISIBLE
+            button.text = "ログイン状態"
         }
 
         val dataBaseReference = FirebaseDatabase.getInstance().reference
